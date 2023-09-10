@@ -44,15 +44,26 @@
                     <p class="text-light text-center">Admin Name</p>
                 </div>
                 <button class="my-3"><a href="" class="nav-link text-light bg-info my-1">Insert Products</a></button>
+                <button class="my-3"><a href="" class="nav-link text-light bg-info my-1">View Products</a></button>
                 <button><a href="index.php?insert_category" class="nav-link text-light bg-info my-1">Insert Categories</a></button>
                 <button><a href="" class="nav-link text-light bg-info my-1">View Categories</a></button>
-                <button><a href="" class="nav-link text-light bg-info my-1">Insert Brands</a></button>
+                <button><a href="index.php?insert_brand" class="nav-link text-light bg-info my-1">Insert Brands</a></button>
                 <button><a href="" class="nav-link text-light bg-info my-1">View Brands</a></button>
                 <button><a href="" class="nav-link text-light bg-info my-1">All orders</a></button>
                 <button><a href="" class="nav-link text-light bg-info my-1">All payments</a></button>
                 <button><a href="" class="nav-link text-light bg-info my-1">List users</a></button>
                 <button><a href="" class="nav-link text-light bg-info my-1">Logout</a></button>
             </div>
+        </div>
+        <div class="container my-5">
+            <?php
+                if(isset($_GET['insert_category'])){
+                    include('insert_categories.php');
+                }
+                if(isset($_GET['insert_brand'])){
+                    include('insert_brands.php');
+                }
+            ?>
         </div>
         <div class="bg-info p-3 text-center footer">
             <p>All rights reserved</p>

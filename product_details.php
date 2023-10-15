@@ -36,18 +36,9 @@
         <li class="nav-item">
           <a class="nav-link" href="display_all.php">Products</a>
         </li>
-        <?php
-          if(isset($_SESSION['username'])){
-            echo "<li class='nav-item'>
-            <a class='nav-link' href='./users_area/profile.php'>My Account</a>
-          </li>";
-          }
-          else{
-            echo "<li class='nav-item'>
-            <a class='nav-link' href='./users_area/user_registration.php'>Register</a>
-          </li>";
-          }
-        ?>
+        <li class="nav-item">
+          <a class="nav-link" href="./users_area/user_registration.php">Register</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
@@ -85,12 +76,12 @@
         }
           if(!isset($_SESSION['username'])){
             echo "<li class='nav-item'>
-            <a class='nav-link' href='./users_area/user_login.php'>Login</a>
+            <a class='nav-link' href='./user_login.php'>Login</a>
             </li>";
           }
           else{
             echo "<li class='nav-item'>
-            <a class='nav-link' href='./users_area/logout.php'>Logout</a>
+            <a class='nav-link' href='logout.php'>Logout</a>
             </li>";
           }
         ?>
@@ -104,11 +95,11 @@
 
 <div class="row px-1">
     <div class="col-md-10">
-        <div class="row">
+        <div class="row"> 
             <?php
-                getProducts();
+                view_details();
                 get_unique_categories();
-                get_unique_brands(); 
+                get_unique_brands();
             ?>
         </div>
     </div>

@@ -31,23 +31,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="display_all.php">Products</a>
+          <a class="nav-link" href="#">Products</a>
         </li>
-        <?php
-          if(isset($_SESSION['username'])){
-            echo "<li class='nav-item'>
-            <a class='nav-link' href='./users_area/profile.php'>My Account</a>
-          </li>";
-          }
-          else{
-            echo "<li class='nav-item'>
-            <a class='nav-link' href='./users_area/user_registration.php'>Register</a>
-          </li>";
-          }
-        ?>
+        <li class="nav-item">
+          <a class="nav-link" href="./users_area/user_registration.php">Register</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
@@ -85,12 +76,12 @@
         }
           if(!isset($_SESSION['username'])){
             echo "<li class='nav-item'>
-            <a class='nav-link' href='./users_area/user_login.php'>Login</a>
+            <a class='nav-link' href='./user_login.php'>Login</a>
             </li>";
           }
           else{
             echo "<li class='nav-item'>
-            <a class='nav-link' href='./users_area/logout.php'>Logout</a>
+            <a class='nav-link' href='logout.php'>Logout</a>
             </li>";
           }
         ?>
@@ -106,9 +97,9 @@
     <div class="col-md-10">
         <div class="row">
             <?php
-                getProducts();
+                search_product();
                 get_unique_categories();
-                get_unique_brands(); 
+                get_unique_brands();
             ?>
         </div>
     </div>
@@ -132,7 +123,11 @@
 
     </div>
 </div>
-<?php include("./includes/footer.php") ?>
+
+
+<div class="bg-info p-3 text-center">
+    <p>All rights reserved</p>
+</div>
 </div>
 
 
